@@ -43,6 +43,7 @@ public class PreparedStatement01 {
         pst1.setInt(1,15000);
         pst1.setString(2, "GOOGLE");
 
+
         //4.adım :Execute Query
         int updateRowNumbers1=pst1.executeUpdate();
         System.out.println(updateRowNumbers+" satir guncellendi");
@@ -58,21 +59,34 @@ public class PreparedStatement01 {
 
 //2. Örnek: "SELECT * FROM <table name>" query'sini
 // prepared statement ile kullanın.
+        System.out.println("===============");
 
-    String sql3="SELECT * from ? ";
-    PreparedStatement pst2=con.prepareStatement(sql3);
-    pst2.setString(1, "companies");
+        read_Data(con, "companies");
 
-    ResultSet result4=pst2.executeQuery(sql3);
-    while (result4.next()) {
-        System.out.println(result4.getInt(1) +
-                "-" + result4.getString(2) +
-                "-" + result4.getInt(3));
+        con.close();
+        st.close();
+
+    }
+
+    public static void read_Data(Connection con, String tableName) {
+        try {
+            String query=String.format("SELECT * from %s ", tableName);
+            Statement statement1=con.createStatement();
+            ResultSet result=statement1.executeQuery(query);
+            while (result.next()) {
+                System.out.println(result.getString(1) +
+                        "-" + result.getString(2) +
+                        "-" + result.getInt(3));
+            }
+
+
+
+        } catch (Exception e) {
+            System.out.println(e);
+        }
+
+
     }
 
 
-
-
-
-    }
 }
