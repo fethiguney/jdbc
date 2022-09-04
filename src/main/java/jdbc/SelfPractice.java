@@ -26,9 +26,42 @@ public class SelfPractice {
         }
 
         //id'si 5 olan personelin isim, yaş ve email bilgilerini listeleyiniz
+
+        String sql2="SELECT isim, yas, email from personel where id=5";
+        ResultSet result2=st.executeQuery(sql2);
+        while(result2.next()){
+            System.out.println(
+                     result2.getString("isim") +
+                    "--" + result2.getInt("yas")+
+                    "--"+result2.getString("email"));
+        }
+
+        // 30 yaşından buyuk personeli listeleyin
+
+        String sql3="SELECT * from personel where yas>30";
+        ResultSet result3=st.executeQuery(sql3);
+        while(result3.next()){
+            System.out.println(result3.getInt(1) +
+                    "--" + result3.getString(2) +
+                    "--" + result3.getInt(3)+
+                    "--"+ result3.getInt(4)+
+                    "--"+result3.getString(5));
+        }
+
+        System.out.println("=========================================");
+
+        //  maası 21000 olmayan personel bilgilerini listeleyiniz.
+        String sql4="Select * from personel where maas!=21000";
+        ResultSet result4=st.executeQuery(sql4);
+        while(result4.next()){
+            System.out.println(result4.getInt(1) +
+                    "--" + result4.getString(2) +
+                    "--" + result4.getInt(3)+
+                    "--"+ result4.getInt(4)+
+                    "--"+result4.getString(5));
+        }
+        System.out.println("=========================================");
         /*
-        30 yaşından buyuk personeli listeleyin
-        maası 21000 olmayan personel bilgilerini listeleyiniz.
         ismi a harfi ile başlayan personel bilgilerini listeleyiniz.
         ismi n harfi ile biten personel bilgilerini listeleyiniz.
         id'si 3,5,7 ve 9 olan personel bilgilerini listeleyiniz.
