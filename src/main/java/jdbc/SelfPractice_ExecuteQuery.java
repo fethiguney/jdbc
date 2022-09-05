@@ -2,7 +2,7 @@ package jdbc;
 
 import java.sql.*;
 
-public class SelfPractice {
+public class SelfPractice_ExecuteQuery {
 
     public static void main(String[] args) throws SQLException, ClassNotFoundException {
 
@@ -35,7 +35,7 @@ public class SelfPractice {
                     "--" + result2.getInt("yas")+
                     "--"+result2.getString("email"));
         }
-
+        System.out.println("=========================================");
         // 30 yaşından buyuk personeli listeleyin
 
         String sql3="SELECT * from personel where yas>30";
@@ -61,9 +61,29 @@ public class SelfPractice {
                     "--"+result4.getString(5));
         }
         System.out.println("=========================================");
+
+        //ismi a harfi ile başlayan personel bilgilerini listeleyiniz.
+        String sql5="Select * from personel where isim ilike 'a%'";
+        ResultSet result5=st.executeQuery(sql5);
+        while(result5.next()){
+            System.out.println(result5.getInt(1) +
+                    "--" + result5.getString(2) +
+                    "--" + result5.getInt(3)+
+                    "--"+ result5.getInt(4)+
+                    "--"+result5.getString(5));
+        }
+        System.out.println("=========================================");
+       // ismi n harfi ile biten personel bilgilerini listeleyiniz.
+        String sql6="Select * from personel where isim ilike '%n'";
+        ResultSet result6=st.executeQuery(sql6);
+        while(result6.next()){
+            System.out.println(result6.getInt(1) +
+                    "--" + result6.getString(2) +
+                    "--" + result6.getInt(3)+
+                    "--"+ result6.getInt(4)+
+                    "--"+result6.getString(5));
+        }
         /*
-        ismi a harfi ile başlayan personel bilgilerini listeleyiniz.
-        ismi n harfi ile biten personel bilgilerini listeleyiniz.
         id'si 3,5,7 ve 9 olan personel bilgilerini listeleyiniz.
          yaşı 39,48 ve 54 olmayan personel bilgilerini listeleyiniz.
           yaşı 30 ve 40 arasında olan personel bilgilerini listeleyiniz.
