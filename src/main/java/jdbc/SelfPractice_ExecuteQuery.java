@@ -96,7 +96,8 @@ public class SelfPractice_ExecuteQuery {
            En yüksek maaş olan ilk 3 personel bilgilerini sıralayınız
      */
 
-
+        con.close();
+        st.close();
 
 
     }

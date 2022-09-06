@@ -55,7 +55,8 @@ public class SelfPractice_ExecuteQuery02 {
 
 
 
-
+        con.close();
+        st.close();
 
 
 

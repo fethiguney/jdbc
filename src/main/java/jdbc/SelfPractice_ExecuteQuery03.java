@@ -48,7 +48,8 @@ public class SelfPractice_ExecuteQuery03 {
                     "--" + result2.getString("sehir") +
                     "--" + result2.getString("maas"));
         }
-
+        con.close();
+        st.close();
 
     }
 }
