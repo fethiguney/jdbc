@@ -2,7 +2,7 @@
 <project version="4">
   <component name="DBNavigator.Project.DataEditorManager">
     <record-view-column-sorting-type value="BY_INDEX" />
-    <value-preview-text-wrapping value="true" />
+    <value-preview-text-wrapping value="false" />
     <value-preview-pinned value="false" />
   </component>
   <component name="DBNavigator.Project.DataExportManager">
@@ -29,7 +29,7 @@
   </component>
   <component name="DBNavigator.Project.DatabaseConsoleManager">
     <connection id="fa086707-e62d-435a-a135-10cabb945b80">
-      <console name="Connection" type="STANDARD" schema="public" session="Main"><![CDATA[select * from calisanlar]]></console>
+      <console name="Connection" type="STANDARD" schema="public" session="Main"><![CDATA[select * from ogrenciler]]></console>
     </connection>
   </component>
   <component name="DBNavigator.Project.DatabaseFileManager">
@@ -39,6 +39,7 @@
     <connection id="fa086707-e62d-435a-a135-10cabb945b80" />
   </component>
   <component name="DBNavigator.Project.DatasetFilterManager">
+    <filter-actions connection-id="fa086707-e62d-435a-a135-10cabb945b80" dataset="public.calisanlar" active-filter-id="" />
     <filter-actions connection-id="fa086707-e62d-435a-a135-10cabb945b80" dataset="public.adresler" active-filter-id="" />
   </component>
   <component name="DBNavigator.Project.EditorStateManager">
@@ -83,7 +84,7 @@
           <url-type value="DATABASE" />
           <host value="localhost" />
           <port value="5432" />
-          <database value="postgres" />
+          <database value="sql_practice" />
           <type value="USER_PASSWORD" />
           <user value="postgres" />
           <deprecated-pwd value="Mjc0ODE3" />
